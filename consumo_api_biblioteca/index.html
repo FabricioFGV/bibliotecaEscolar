@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Registro</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- custom CSS -->
+    <link href="app/assets/css/style.css" rel="stylesheet" />
+
+ 
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+  <a class="navbar-brand" href="."><img src="app/assets/jpg/logo.png" class="rounded" alt="Cinque Terre"></a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link">
+          <button class='btn register-form'>
+            <span>Entradas</span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <button class='btn AlumTable-form'>
+            <span>Registro</span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <button class='btn student-form'>
+            <span>Alumno</span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <button class='btn ProgramE-form'>
+            <span>Carrera</span>
+          </button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
+<!-- our app will be injected here -->
+<div id="app"></div>
+
+<div id='php'></div>
+ 
+<!-- app js script -->
+<script src="app/app.js"></script>
+
+<!-- Alumnos scripts -->
+<script src="app/AlumTable/read-AlumTable.js"></script>
+
+<!-- Estudiantes scripts -->
+<script src="app/student/read-student.js"></script>
+<script src="app/student/readOne-student.js"></script>
+
+<!-- Programas scripts -->
+<script src="app/programE/read-ProgramE.js"></script>
+<script src="app/programE/readOne-ProgramE.js"></script>
+
+
+<!-- Entradas scripts -->
+<script src="app/enter/enters.js"></script>
+
+
+<!--Footer-->
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Av. Universidad Tecnológica No. 1000, Col. Tierra Negra, Xicotepec de Juárez, Puebla, C. P. 73080.</p>
+</div>
+ 
+</body>
+</html>
