@@ -1,7 +1,11 @@
 $(document).ready(function(){
+
+    
  
     // show list of student on first load
     showStudents();
+
+
 
     $(document).on('submit', '#create-register-form', function(){
 
@@ -28,38 +32,12 @@ $(document).ready(function(){
  
 // showStudents() method will be here
 
-
+$(document).ready(function() {
+       
+});
 
 function showStudents(){
  			// html
-			read_students_html=`  
-      <br>
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-header">
-              <h1 class="display-4" align="center">Bienvenido<h1>
-              <img src="app/assets/jpg/unknown.jpg" class="img-thumbnail mx-auto d-block" alt="Cinque Terre" >
-              <br>
-            </div>
-            <div class="card-body">
-              <br>
-              <form id='create-register-form' action='#' method='post'>
-                <div class="input-group mb-3">
-                  <input autofocus type="text" name='Enrolmed' class="form-control" placeholder="">
-                  <div class="input-group-append">
-                  <button class="btn btn-success" type="submit" onclick="location.href='http://localhost/Registro/';">Registrar</button>
-                </div>
-              </form>
-              <br>
-            </div>
-            </div>
-            <div class="card-footer" align="center">UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ</div>
-        </div>
-      </div>
-			`;
-
 		$.getJSON("http://localhost/api_biblioteca/AlumTable/readLast.php", 
  		function(data){
      		// end table
@@ -76,7 +54,35 @@ function showStudents(){
    			}
 			var time = ((dt.getHours() + 24) % 12 || 12) + ":" + ((dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes())+" "+mid;
 			$.each(data.records, function(key, val) {
-			read_students_html+=`
+
+        read_students_html=`  
+      <br>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="display-4" align="center">Bienvenido<h1>
+              <img src="app/assets/jpg/`+val.Enrolmed+`.jpg" onerror="if (this.src != 'app/assets/jpg/unknown.jpg') this.src = 'app/assets/jpg/unknown.jpg';" class="img-thumbnail mx-auto d-block">
+              <br>
+            </div>
+            <div class="card-body">
+              <br>
+              <form id='create-register-form' action='#' method='post'>
+                <div class="input-group mb-3">
+                  <input autofocus type="text" name='Enrolmed' class="form-control" placeholder="">
+                  <div class="input-group-append">
+                  <button class="btn btn-success" type="submit" onclick="eraseCache(){
+  window.location = window.location.href+'?eraseCache=true';
+}">Registrar</button>
+                </div>
+              </form>
+              <br>
+            </div>
+            </div>
+            <div class="card-footer" align="center">UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ</div>
+        </div>
+      </div>
       <div class="col-sm-9">
   			<div class="card">
   				<div class="card-body">
